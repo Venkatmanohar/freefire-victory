@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,10 +12,9 @@ body{
   margin:0;
   background:#08090d;
   color:#fff;
-  font-family:Arial
+  font-family:Arial,sans-serif
 }
 
-/* LOGIN */
 .login-wrap{
   min-height:100vh;
   display:flex;
@@ -36,7 +35,7 @@ body{
 .login-logo{
   font-size:22px;
   font-weight:900;
-  margin-bottom:22px
+  margin-bottom:20px
 }
 
 .login-logo span,
@@ -65,7 +64,6 @@ body{
   margin-top:10px
 }
 
-/* ADMIN */
 .app{
   display:none;
   min-height:100vh
@@ -99,6 +97,10 @@ body{
   border-radius:7px;
   text-align:left;
   cursor:pointer
+}
+
+.nav:hover{
+  background:#20232a
 }
 
 .nav.active{
@@ -198,6 +200,13 @@ textarea{
   margin:4px 0
 }
 
+.input:focus,
+select:focus,
+textarea:focus{
+  outline:none;
+  border-color:#ffb300
+}
+
 .two{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -212,10 +221,27 @@ textarea{
   color:#ffb300
 }
 
+.red{
+  color:#ff6b6b
+}
+
 .publish-status{
   margin-top:10px;
   font-size:12px;
-  color:#888
+  min-height:18px
+}
+
+.preview{
+  margin-top:12px;
+  background:#0d0f14;
+  border:1px solid #292c33;
+  border-radius:10px;
+  padding:12px;
+  font-size:11px
+}
+
+.preview b{
+  color:#ffb300
 }
 
 @media(max-width:800px){
@@ -264,9 +290,9 @@ textarea{
 
 <body>
 
-<!-- ========================= -->
-<!-- ADMIN LOGIN -->
-<!-- ========================= -->
+<!-- ================================================= -->
+<!-- LOGIN -->
+<!-- ================================================= -->
 
 <div id="loginScreen" class="login-wrap">
 
@@ -320,9 +346,9 @@ textarea{
 </div>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- ADMIN APP -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <div id="adminApp" class="app">
 
@@ -482,9 +508,9 @@ textarea{
 </div>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- DASHBOARD -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="dash"
@@ -574,9 +600,9 @@ textarea{
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- TOURNAMENTS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="tour"
@@ -585,7 +611,9 @@ textarea{
 
 <div class="box">
 
-<h2>Tournaments / Rooms</h2>
+<h2>
+  Tournaments / Rooms
+</h2>
 
 <div class="two">
 
@@ -614,6 +642,7 @@ textarea{
   id="tournamentName"
   class="input"
   placeholder="Tournament name"
+  required
 >
 
 </div>
@@ -626,7 +655,9 @@ textarea{
   class="input"
   type="number"
   min="0"
+  step="1"
   placeholder="Entry fee"
+  required
 >
 
 <input
@@ -634,17 +665,33 @@ textarea{
   class="input"
   type="number"
   min="1"
+  step="1"
   placeholder="Custom slots"
+  required
 >
 
 </div>
 
 
+<!-- EXACT DATE + TIME -->
+
 <input
   id="tournamentStart"
   class="input"
-  placeholder="Start date/time"
+  type="datetime-local"
+  required
 >
+
+
+<div class="preview">
+
+  Selected start:
+
+  <b id="startPreview">
+    Not selected
+  </b>
+
+</div>
 
 
 <button
@@ -666,9 +713,9 @@ textarea{
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- PLAYERS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="players"
@@ -703,9 +750,9 @@ textarea{
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- TOURNAMENT PLAYERS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="tp"
@@ -714,7 +761,9 @@ textarea{
 
 <div class="box">
 
-<h2>Tournament Players</h2>
+<h2>
+  Tournament Players
+</h2>
 
 <p>
 Players are shown by Free Fire IGN;
@@ -740,9 +789,9 @@ internal IDs stay private.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- RESULTS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="results"
@@ -751,7 +800,9 @@ internal IDs stay private.
 
 <div class="box">
 
-<h2>Results / Prize Pool</h2>
+<h2>
+  Results / Prize Pool
+</h2>
 
 <div class="row">
   <b>IGN</b>
@@ -779,9 +830,9 @@ internal IDs stay private.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- DEPOSITS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="dep"
@@ -811,9 +862,9 @@ internal IDs stay private.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- WITHDRAWALS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="with"
@@ -868,9 +919,9 @@ Admin approval required.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- LEDGER -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="ledger"
@@ -891,9 +942,9 @@ prizes and withdrawals are recorded.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- SETTLEMENTS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="settle"
@@ -914,9 +965,9 @@ settlement records.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- PROMOTIONS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="promo"
@@ -960,9 +1011,9 @@ settlement records.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- ANNOUNCEMENTS -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="notice"
@@ -994,9 +1045,9 @@ settlement records.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- SUPPORT -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="support"
@@ -1026,9 +1077,9 @@ settlement records.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- APP MANAGEMENT -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="app"
@@ -1049,9 +1100,9 @@ home sections and banner settings.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- WEBSITE MANAGEMENT -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="web"
@@ -1072,9 +1123,9 @@ Download App CTA and policies.
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- LEGAL -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="legal"
@@ -1105,9 +1156,9 @@ Privacy / Payment / Fair Play Policies
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- ROLES -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="roles"
@@ -1127,9 +1178,9 @@ Super Admin · Admin · Finance · Support · Content Manager
 </section>
 
 
-<!-- ========================= -->
+<!-- ================================================= -->
 <!-- AUDIT -->
-<!-- ========================= -->
+<!-- ================================================= -->
 
 <section
   id="audit"
@@ -1153,19 +1204,19 @@ timestamp and action.
 </div>
 
 
-<!-- ========================= -->
-<!-- JAVASCRIPT -->
-<!-- ========================= -->
-
 <script>
+
+/* =================================================
+   BACKEND URL
+================================================= */
 
 const API_BASE =
   "https://freefire-victory-owln.vercel.app";
 
 
-/* =========================
-   ADMIN LOGIN
-========================= */
+/* =================================================
+   LOGIN
+================================================= */
 
 document
 .getElementById("loginForm")
@@ -1176,36 +1227,46 @@ document
     e.preventDefault();
 
     const error =
-      document.getElementById("loginError");
+      document.getElementById(
+        "loginError"
+      );
 
-    error.style.display = "none";
+    error.style.display =
+      "none";
 
     try{
 
       const response =
         await fetch(
-          API_BASE + "/api/admin/login",
+          API_BASE +
+          "/api/admin/login",
           {
             method:"POST",
 
             headers:{
-              "Content-Type":"application/json"
+              "Content-Type":
+                "application/json"
             },
 
             body:JSON.stringify({
 
               username:
                 document
-                .getElementById("username")
+                .getElementById(
+                  "username"
+                )
                 .value
                 .trim(),
 
               password:
                 document
-                .getElementById("password")
+                .getElementById(
+                  "password"
+                )
                 .value
 
             })
+
           }
         );
 
@@ -1236,17 +1297,12 @@ document
       showAdmin();
 
 
-    }catch(error){
+    }catch(err){
 
-      errorElement =
-        document.getElementById(
-          "loginError"
-        );
-
-      errorElement.textContent =
+      error.textContent =
         "Invalid username or password.";
 
-      errorElement.style.display =
+      error.style.display =
         "block";
 
     }
@@ -1255,26 +1311,33 @@ document
 );
 
 
-/* =========================
+/* =================================================
    SHOW ADMIN
-========================= */
+================================================= */
 
 function showAdmin(){
 
   document
-  .getElementById("loginScreen")
-  .style.display = "none";
+  .getElementById(
+    "loginScreen"
+  )
+  .style.display =
+    "none";
+
 
   document
-  .getElementById("adminApp")
-  .style.display = "flex";
+  .getElementById(
+    "adminApp"
+  )
+  .style.display =
+    "flex";
 
 }
 
 
-/* =========================
+/* =================================================
    LOGOUT
-========================= */
+================================================= */
 
 function logout(){
 
@@ -1282,24 +1345,35 @@ function logout(){
     "adminLoggedIn"
   );
 
-  document
-  .getElementById("adminApp")
-  .style.display = "none";
 
   document
-  .getElementById("loginScreen")
-  .style.display = "flex";
+  .getElementById(
+    "adminApp"
+  )
+  .style.display =
+    "none";
+
 
   document
-  .getElementById("password")
+  .getElementById(
+    "loginScreen"
+  )
+  .style.display =
+    "flex";
+
+
+  document
+  .getElementById(
+    "password"
+  )
   .value = "";
 
 }
 
 
-/* =========================
+/* =================================================
    RESTORE LOGIN
-========================= */
+================================================= */
 
 if(
   sessionStorage.getItem(
@@ -1312,9 +1386,130 @@ if(
 }
 
 
-/* =========================
-   TOURNAMENT CREATE & PUBLISH
-========================= */
+/* =================================================
+   NAVIGATION
+================================================= */
+
+function go(id,b){
+
+  document
+  .querySelectorAll(".page")
+  .forEach(
+    function(x){
+
+      x.classList.remove(
+        "active"
+      );
+
+    }
+  );
+
+
+  const page =
+    document.getElementById(id);
+
+
+  if(page){
+
+    page.classList.add(
+      "active"
+    );
+
+  }
+
+
+  document
+  .querySelectorAll(".nav")
+  .forEach(
+    function(x){
+
+      x.classList.remove(
+        "active"
+      );
+
+    }
+  );
+
+
+  if(b){
+
+    b.classList.add(
+      "active"
+    );
+
+  }
+
+}
+
+
+/* =================================================
+   FORMAT DATE/TIME FOR PREVIEW
+================================================= */
+
+function formatDateTime(value){
+
+  if(!value){
+    return "Not selected";
+  }
+
+
+  const date =
+    new Date(value);
+
+
+  if(
+    Number.isNaN(
+      date.getTime()
+    )
+  ){
+
+    return "Invalid date/time";
+
+  }
+
+
+  return date.toLocaleString(
+    undefined,
+    {
+      year:"numeric",
+      month:"short",
+      day:"numeric",
+      hour:"2-digit",
+      minute:"2-digit"
+    }
+  );
+
+}
+
+
+/* =================================================
+   START TIME PREVIEW
+================================================= */
+
+document
+.getElementById(
+  "tournamentStart"
+)
+.addEventListener(
+  "change",
+  function(){
+
+    document
+    .getElementById(
+      "startPreview"
+    )
+    .textContent =
+      formatDateTime(
+        this.value
+      );
+
+  }
+);
+
+
+/* =================================================
+   CREATE & PUBLISH TOURNAMENT
+================================================= */
 
 async function createTournament(){
 
@@ -1355,13 +1550,12 @@ async function createTournament(){
     );
 
 
-  const start =
+  const startInput =
     document
     .getElementById(
       "tournamentStart"
     )
-    .value
-    .trim();
+    .value;
 
 
   const button =
@@ -1383,10 +1577,11 @@ async function createTournament(){
   if(!name){
 
     alert(
-      "Enter tournament name"
+      "Enter tournament name."
     );
 
     return;
+
   }
 
 
@@ -1396,10 +1591,11 @@ async function createTournament(){
   ){
 
     alert(
-      "Enter valid entry fee"
+      "Enter a valid entry fee."
     );
 
     return;
+
   }
 
 
@@ -1409,20 +1605,79 @@ async function createTournament(){
   ){
 
     alert(
-      "Enter valid slots"
+      "Enter valid slots."
     );
 
     return;
+
   }
 
 
-  button.disabled = true;
+  if(!startInput){
+
+    alert(
+      "Select tournament date and time."
+    );
+
+    return;
+
+  }
+
+
+  const startDate =
+    new Date(startInput);
+
+
+  if(
+    Number.isNaN(
+      startDate.getTime()
+    )
+  ){
+
+    alert(
+      "Invalid tournament date/time."
+    );
+
+    return;
+
+  }
+
+
+  if(
+    startDate.getTime() <=
+    Date.now()
+  ){
+
+    alert(
+      "Tournament start time must be in the future."
+    );
+
+    return;
+
+  }
+
+
+  /*
+    Convert to ISO so App + Website
+    receive the same exact moment.
+  */
+
+  const start =
+    startDate.toISOString();
+
+
+  button.disabled =
+    true;
 
   button.textContent =
     "Publishing...";
 
+
   status.textContent =
-    "Connecting to backend...";
+    "Publishing tournament...";
+
+  status.className =
+    "publish-status yellow";
 
 
   try{
@@ -1452,35 +1707,50 @@ async function createTournament(){
             start:start
 
           })
+
         }
       );
 
 
-    const data =
-      await response.json();
+    let data = {};
+
+    try{
+
+      data =
+        await response.json();
+
+    }catch(_){
+
+      data = {};
+
+    }
 
 
     if(!response.ok){
 
       throw new Error(
         data.error ||
-        "Tournament creation failed"
+        "Tournament creation failed."
       );
 
     }
 
 
-    /* SUCCESS */
-
     status.textContent =
-      "Published successfully.";
+      "Tournament published successfully.";
+
+    status.className =
+      "publish-status green";
+
 
     alert(
       "Tournament published successfully!"
     );
 
 
-    /* CLEAR FORM */
+    /*
+      Clear form
+    */
 
     document
     .getElementById(
@@ -1488,17 +1758,20 @@ async function createTournament(){
     )
     .value = "";
 
+
     document
     .getElementById(
       "tournamentEntry"
     )
     .value = "";
 
+
     document
     .getElementById(
       "tournamentSlots"
     )
     .value = "";
+
 
     document
     .getElementById(
@@ -1507,8 +1780,16 @@ async function createTournament(){
     .value = "";
 
 
+    document
+    .getElementById(
+      "startPreview"
+    )
+    .textContent =
+      "Not selected";
+
+
     console.log(
-      "Created tournament:",
+      "Tournament created:",
       data
     );
 
@@ -1522,7 +1803,11 @@ async function createTournament(){
 
 
     status.textContent =
-      "Publish failed.";
+      "Publish failed: " +
+      error.message;
+
+    status.className =
+      "publish-status red";
 
 
     alert(
@@ -1533,60 +1818,11 @@ async function createTournament(){
 
   }finally{
 
-    button.disabled = false;
+    button.disabled =
+      false;
 
     button.textContent =
       "Create & Publish";
-
-  }
-
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-function go(id,b){
-
-  document
-  .querySelectorAll(".page")
-  .forEach(
-    x =>
-      x.classList.remove(
-        "active"
-      )
-  );
-
-
-  const page =
-    document.getElementById(id);
-
-
-  if(page){
-
-    page.classList.add(
-      "active"
-    );
-
-  }
-
-
-  document
-  .querySelectorAll(".nav")
-  .forEach(
-    x =>
-      x.classList.remove(
-        "active"
-      )
-  );
-
-
-  if(b){
-
-    b.classList.add(
-      "active"
-    );
 
   }
 
