@@ -7,8 +7,12 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
-
+body{
+  margin:0;
+  background:#08090d;
+  color:#fff;
+  font-family:Arial,sans-serif
+}
 .login-wrap{
   min-height:100vh;
   display:flex;
@@ -16,7 +20,6 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   justify-content:center;
   background:#08090d
 }
-
 .login-box{
   width:min(420px,92vw);
   background:#13151b;
@@ -25,42 +28,39 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   padding:28px;
   box-shadow:0 20px 60px #0008
 }
-
-.login-logo{font-size:22px;font-weight:900;margin-bottom:20px}
+.login-logo{
+  font-size:22px;
+  font-weight:900;
+  margin-bottom:20px
+}
 .login-logo span,.logo span{color:#ffb300}
 .login-box h1{margin:0 0 8px}
 .login-box p{color:#888;font-size:13px}
-
 .login-error{
   display:none;
   color:#ff6b6b;
   font-size:12px;
   margin:8px 0
 }
-
 .login-box .btn{width:100%;margin-top:10px}
 
 .app{
   display:none;
   min-height:100vh
 }
-
 .side{
   width:240px;
   background:#111218;
   border-right:1px solid #282b32;
   padding:15px
 }
-
 .logo{font-weight:900;padding:8px}
-
 .group{
   color:#666;
   font-size:9px;
   padding:14px 8px 5px;
   letter-spacing:1px
 }
-
 .nav{
   width:100%;
   border:0;
@@ -71,26 +71,21 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   text-align:left;
   cursor:pointer
 }
-
 .nav:hover{background:#20232a}
-
 .nav.active{
   background:#ffb300;
   color:#111;
   font-weight:900
 }
-
 .main{
   flex:1;
   padding:22px
 }
-
 .topbar{
   display:flex;
   justify-content:flex-end;
   margin-bottom:10px
 }
-
 .logout{
   background:#242730;
   color:#fff;
@@ -99,7 +94,6 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   padding:8px 12px;
   cursor:pointer
 }
-
 .page{display:none}
 .page.active{display:block}
 
@@ -108,7 +102,6 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   grid-template-columns:repeat(4,1fr);
   gap:12px
 }
-
 .box{
   background:#13151b;
   border:1px solid #292c33;
@@ -116,20 +109,17 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   padding:16px;
   margin-bottom:12px
 }
-
 .stat b{
   display:block;
   color:#ffb300;
   font-size:25px;
   margin-top:6px
 }
-
 .grid2{
   display:grid;
   grid-template-columns:1.6fr 1fr;
   gap:12px
 }
-
 .row{
   display:grid;
   grid-template-columns:1.5fr 1fr .7fr .7fr;
@@ -138,7 +128,6 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   font-size:11px;
   gap:8px
 }
-
 .btn{
   background:#ffb300;
   color:#111;
@@ -148,10 +137,35 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   font-weight:900;
   cursor:pointer
 }
+.btn:hover{filter:brightness(1.08)}
+.btn:disabled{opacity:.6;cursor:not-allowed}
 
-.btn:disabled{
-  opacity:.6;
-  cursor:not-allowed
+.btn-dark{
+  background:#292c33;
+  color:#fff;
+  border:0;
+  border-radius:8px;
+  padding:9px 12px;
+  font-weight:900;
+  cursor:pointer
+}
+.btn-red{
+  background:#d93636;
+  color:#fff;
+  border:0;
+  border-radius:8px;
+  padding:9px 12px;
+  font-weight:900;
+  cursor:pointer
+}
+.btn-green{
+  background:#27a866;
+  color:#fff;
+  border:0;
+  border-radius:8px;
+  padding:9px 12px;
+  font-weight:900;
+  cursor:pointer
 }
 
 .input,select,textarea{
@@ -163,41 +177,35 @@ body{margin:0;background:#08090d;color:#fff;font-family:Arial,sans-serif}
   width:100%;
   margin:4px 0
 }
-
 .input:focus,select:focus,textarea:focus{
   outline:none;
   border-color:#ffb300
 }
-
 .two{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:8px
 }
-
 .three{
   display:grid;
   grid-template-columns:1fr 1fr 110px;
   gap:8px
 }
-
 label{
   display:block;
   color:#aaa;
   font-size:11px;
   margin:4px 0
 }
-
 .green{color:#5fff99}
 .yellow{color:#ffb300}
 .red{color:#ff6b6b}
 
-.publish-status{
+.status{
   margin-top:10px;
-  font-size:12px;
-  min-height:18px
+  min-height:18px;
+  font-size:12px
 }
-
 .preview{
   margin-top:12px;
   background:#0d0f14;
@@ -206,23 +214,61 @@ label{
   padding:12px;
   font-size:11px
 }
-
 .preview b{color:#ffb300}
 
 .tournament-card{
   background:#0d0f14;
   border:1px solid #292c33;
   border-radius:12px;
-  padding:12px;
+  padding:14px;
   margin-top:10px
 }
-
-.tournament-card h3{margin:0 0 8px}
-
-.tournament-card p{
+.tournament-card h3{
+  margin:0 0 8px;
+  color:#fff
+}
+.tournament-info{
   color:#aaa;
   font-size:11px;
-  line-height:1.7
+  line-height:1.8
+}
+.tournament-actions{
+  display:flex;
+  gap:8px;
+  margin-top:12px
+}
+
+.edit-box{
+  display:none;
+  background:#111319;
+  border:1px solid #ffb300;
+  border-radius:12px;
+  padding:14px;
+  margin-top:12px
+}
+.edit-box.active{display:block}
+
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000b;
+  align-items:center;
+  justify-content:center;
+  z-index:1000
+}
+.modal.active{display:flex}
+.modal-box{
+  width:min(400px,92vw);
+  background:#13151b;
+  border:1px solid #343740;
+  border-radius:14px;
+  padding:20px
+}
+.modal-actions{
+  display:flex;
+  gap:8px;
+  margin-top:14px
 }
 
 @media(max-width:800px){
@@ -390,11 +436,7 @@ Audit Logs
 <main class="main">
 
 <div class="topbar">
-
-<button class="logout" onclick="logout()">
-Logout
-</button>
-
+<button class="logout" onclick="logout()">Logout</button>
 </div>
 
 
@@ -489,7 +531,14 @@ Complaints
 
 <div class="box">
 
-<h2>Tournaments / Rooms</h2>
+<h2 id="formTitle">
+Create Tournament
+</h2>
+
+<input
+type="hidden"
+id="editingTournamentId"
+>
 
 <div class="two">
 
@@ -561,8 +610,6 @@ required
 </div>
 
 
-<!-- DATE + TIME + AM PM -->
-
 <h3>Tournament Start</h3>
 
 <div class="three">
@@ -600,11 +647,7 @@ required
 
 <label>AM / PM</label>
 
-<select
-id="tournamentAmPm"
-class="input"
-required
->
+<select id="tournamentAmPm" class="input">
 
 <option value="AM">AM</option>
 <option value="PM">PM</option>
@@ -627,22 +670,34 @@ Not selected
 </div>
 
 
+<div style="display:flex;gap:8px;margin-top:10px">
+
 <button
 id="publishTournamentBtn"
 class="btn"
-onclick="createTournament()"
+onclick="saveTournament()"
 >
 Create & Publish
 </button>
 
-
-<div
-id="publishStatus"
-class="publish-status"
-></div>
+<button
+id="cancelEditBtn"
+class="btn-dark"
+onclick="cancelEdit()"
+style="display:none"
+>
+Cancel Edit
+</button>
 
 </div>
 
+
+<div id="publishStatus" class="status"></div>
+
+</div>
+
+
+<!-- PUBLISHED TOURNAMENTS -->
 
 <div class="box">
 
@@ -811,28 +866,18 @@ Admin approval required.
 <span>RAHUL FF</span>
 <span>WINNING</span>
 <span>₹100</span>
-
-<button
-class="btn"
-onclick="alert('Approved')"
->
+<button class="btn" onclick="alert('Approved')">
 Approve
 </button>
-
 </div>
 
 <div class="row">
 <span>ABHI</span>
 <span>DEPOSIT</span>
 <span>₹480</span>
-
-<button
-class="btn"
-onclick="alert('Approved after 10% platform fee')"
->
+<button class="btn" onclick="alert('Approved after 10% platform fee')">
 Approve
 </button>
-
 </div>
 
 </div>
@@ -924,19 +969,11 @@ Save & Publish
 
 <h2>Announcements</h2>
 
-<input
-class="input"
-placeholder="Title"
->
+<input class="input" placeholder="Title">
 
-<textarea
-placeholder="Announcement"
-></textarea>
+<textarea placeholder="Announcement"></textarea>
 
-<button
-class="btn"
-onclick="alert('Published')"
->
+<button class="btn" onclick="alert('Published')">
 Publish
 </button>
 
@@ -1016,18 +1053,13 @@ Download App CTA and policies.
 
 <h2>Terms / Policies</h2>
 
-<textarea>
-Terms & Conditions
-</textarea>
+<textarea>Terms & Conditions</textarea>
 
 <textarea>
 Privacy / Payment / Fair Play Policies
 </textarea>
 
-<button
-class="btn"
-onclick="alert('Saved')"
->
+<button class="btn" onclick="alert('Saved')">
 Save
 </button>
 
@@ -1074,14 +1106,55 @@ timestamp and action.
 </div>
 
 
+<!-- DELETE CONFIRMATION -->
+
+<div id="deleteModal" class="modal">
+
+<div class="modal-box">
+
+<h2>Delete Tournament?</h2>
+
+<p
+id="deleteMessage"
+style="color:#aaa;font-size:13px"
+>
+This action cannot be undone.
+</p>
+
+<div class="modal-actions">
+
+<button
+class="btn-dark"
+onclick="closeDeleteModal()"
+>
+Cancel
+</button>
+
+<button
+class="btn-red"
+onclick="confirmDelete()"
+>
+Delete
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
 <script>
 
 /* =================================================
-   BACKEND URL
+   BACKEND
 ================================================= */
 
 const API_BASE =
 "https://freefire-victory-owln.vercel.app";
+
+
+let deleteTournamentId = null;
 
 
 /* =================================================
@@ -1114,15 +1187,10 @@ headers:{
 body:JSON.stringify({
 
 username:
-document
-.getElementById("username")
-.value
-.trim(),
+document.getElementById("username").value.trim(),
 
 password:
-document
-.getElementById("password")
-.value
+document.getElementById("password").value
 
 })
 }
@@ -1131,14 +1199,10 @@ document
 const data =
 await response.json();
 
-if(
-!response.ok ||
-!data.ok
-){
+if(!response.ok || !data.ok){
 
 throw new Error(
-data.error ||
-"LOGIN_FAILED"
+data.error || "LOGIN_FAILED"
 );
 
 }
@@ -1169,13 +1233,9 @@ error.style.display="block";
 
 function showAdmin(){
 
-document
-.getElementById("loginScreen")
-.style.display="none";
+document.getElementById("loginScreen").style.display="none";
 
-document
-.getElementById("adminApp")
-.style.display="flex";
+document.getElementById("adminApp").style.display="flex";
 
 loadPublishedTournaments();
 
@@ -1188,33 +1248,23 @@ loadPublishedTournaments();
 
 function logout(){
 
-sessionStorage.removeItem(
-"adminLoggedIn"
-);
+sessionStorage.removeItem("adminLoggedIn");
 
-document
-.getElementById("adminApp")
-.style.display="none";
+document.getElementById("adminApp").style.display="none";
 
-document
-.getElementById("loginScreen")
-.style.display="flex";
+document.getElementById("loginScreen").style.display="flex";
 
-document
-.getElementById("password")
-.value="";
+document.getElementById("password").value="";
 
 }
 
 
 /* =================================================
-   RESTORE LOGIN
+   RESTORE
 ================================================= */
 
 if(
-sessionStorage.getItem(
-"adminLoggedIn"
-)==="true"
+sessionStorage.getItem("adminLoggedIn")==="true"
 ){
 
 showAdmin();
@@ -1223,7 +1273,7 @@ showAdmin();
 
 
 /* =================================================
-   NAVIGATION
+   NAV
 ================================================= */
 
 function go(id,b){
@@ -1259,120 +1309,76 @@ b.classList.add("active");
 
 
 /* =================================================
-   AM/PM PREVIEW
+   START PREVIEW
 ================================================= */
 
 function updateStartPreview(){
 
 const date =
-document
-.getElementById("tournamentDate")
-.value;
+document.getElementById("tournamentDate").value;
 
 const time =
-document
-.getElementById("tournamentTime")
-.value
-.trim();
+document.getElementById("tournamentTime").value.trim();
 
 const ampm =
-document
-.getElementById("tournamentAmPm")
-.value;
+document.getElementById("tournamentAmPm").value;
 
 const preview =
-document
-.getElementById("startPreview");
+document.getElementById("startPreview");
 
 if(!date || !time){
 
-preview.textContent =
-"Not selected";
+preview.textContent="Not selected";
 
 return;
 
 }
 
 preview.textContent =
-date +
-" " +
-time +
-" " +
-ampm;
+date + " " + time + " " + ampm;
 
 }
 
-
 document
 .getElementById("tournamentDate")
-.addEventListener(
-"change",
-updateStartPreview
-);
+.addEventListener("change",updateStartPreview);
 
 document
 .getElementById("tournamentTime")
-.addEventListener(
-"input",
-updateStartPreview
-);
+.addEventListener("input",updateStartPreview);
 
 document
 .getElementById("tournamentAmPm")
-.addEventListener(
-"change",
-updateStartPreview
-);
+.addEventListener("change",updateStartPreview);
 
 
 /* =================================================
-   BUILD EXACT START DATETIME
+   MAKE DATE
 ================================================= */
 
 function makeStartDate(){
 
 const date =
-document
-.getElementById("tournamentDate")
-.value;
+document.getElementById("tournamentDate").value;
 
 const time =
-document
-.getElementById("tournamentTime")
-.value
-.trim();
+document.getElementById("tournamentTime").value.trim();
 
 const ampm =
-document
-.getElementById("tournamentAmPm")
-.value;
+document.getElementById("tournamentAmPm").value;
 
 if(!date){
-
-throw new Error(
-"Select tournament date."
-);
-
+throw new Error("Select tournament date.");
 }
 
-if(
-!/^\d{2}:\d{2}$/.test(time)
-){
-
-throw new Error(
-"Enter time like 08:00."
-);
-
+if(!/^\d{2}:\d{2}$/.test(time)){
+throw new Error("Enter time like 08:00.");
 }
 
-const parts =
-time.split(":");
+const parts=time.split(":");
 
-let hour =
-Number(parts[0]);
-
-const minute =
-Number(parts[1]);
+let hour=Number(parts[0]);
+const minute=Number(parts[1]);
 
 if(
 hour<1 ||
@@ -1380,15 +1386,11 @@ hour>12 ||
 minute<0 ||
 minute>59
 ){
-
-throw new Error(
-"Enter a valid time like 08:00."
-);
-
+throw new Error("Enter a valid time like 08:00.");
 }
 
 
-/* AM/PM → 24 hour */
+/* AM / PM */
 
 if(ampm==="AM"){
 
@@ -1416,15 +1418,9 @@ String(minute).padStart(2,"0") +
 );
 
 if(
-Number.isNaN(
-startDate.getTime()
-)
+Number.isNaN(startDate.getTime())
 ){
-
-throw new Error(
-"Invalid date/time."
-);
-
+throw new Error("Invalid date/time.");
 }
 
 return startDate;
@@ -1433,76 +1429,83 @@ return startDate;
 
 
 /* =================================================
-   CREATE TOURNAMENT
+   RESET FORM
 ================================================= */
 
-async function createTournament(){
+function resetTournamentForm(){
+
+document.getElementById("editingTournamentId").value="";
+
+document.getElementById("tournamentName").value="";
+
+document.getElementById("tournamentEntry").value="";
+
+document.getElementById("tournamentSlots").value="";
+
+document.getElementById("tournamentDate").value="";
+
+document.getElementById("tournamentTime").value="";
+
+document.getElementById("tournamentAmPm").value="AM";
+
+document.getElementById("startPreview").textContent="Not selected";
+
+document.getElementById("formTitle").textContent="Create Tournament";
+
+document.getElementById("publishTournamentBtn").textContent="Create & Publish";
+
+document.getElementById("cancelEditBtn").style.display="none";
+
+}
+
+
+/* =================================================
+   SAVE CREATE OR EDIT
+================================================= */
+
+async function saveTournament(){
+
+const id =
+document.getElementById("editingTournamentId").value;
 
 const name =
-document
-.getElementById("tournamentName")
-.value
-.trim();
+document.getElementById("tournamentName").value.trim();
 
 const mode =
-document
-.getElementById("tournamentMode")
-.value;
+document.getElementById("tournamentMode").value;
 
 const entry =
-Number(
-document
-.getElementById("tournamentEntry")
-.value
-);
+Number(document.getElementById("tournamentEntry").value);
 
 const slots =
-Number(
-document
-.getElementById("tournamentSlots")
-.value
-);
+Number(document.getElementById("tournamentSlots").value);
 
 const button =
-document
-.getElementById("publishTournamentBtn");
+document.getElementById("publishTournamentBtn");
 
 const status =
-document
-.getElementById("publishStatus");
+document.getElementById("publishStatus");
 
 
 if(!name){
 
-alert(
-"Enter tournament name."
-);
+alert("Enter tournament name.");
 
 return;
 
 }
 
-if(
-!Number.isFinite(entry) ||
-entry<0
-){
+if(!Number.isFinite(entry) || entry<0){
 
-alert(
-"Enter a valid entry fee."
-);
+alert("Enter a valid entry fee.");
 
 return;
 
 }
 
-if(
-!Number.isInteger(slots) ||
-slots<1
-){
+if(!Number.isInteger(slots) || slots<1){
 
-alert(
-"Enter valid slots."
-);
+alert("Enter valid slots.");
 
 return;
 
@@ -1513,66 +1516,64 @@ let startDate;
 
 try{
 
-startDate =
-makeStartDate();
+startDate=makeStartDate();
 
 }catch(error){
 
-alert(
-error.message
-);
+alert(error.message);
 
 return;
 
 }
 
 
-if(
-startDate.getTime()<=
-Date.now()
-){
-
-alert(
-"Tournament start time must be in the future."
-);
-
-return;
-
-}
-
-
-/*
-Exact timestamp for App + Website
-*/
-
-const start =
-startDate.toISOString();
+const start=startDate.toISOString();
 
 
 button.disabled=true;
-button.textContent="Publishing...";
 
-status.textContent=
-"Publishing tournament...";
+button.textContent =
+id ? "Saving..." : "Publishing...";
 
-status.className=
-"publish-status yellow";
+status.textContent =
+id ? "Updating tournament..." : "Publishing tournament...";
+
+status.className="status yellow";
 
 
 try{
 
+let url;
+let method;
+
+if(id){
+
+url =
+API_BASE +
+"/api/tournaments/" +
+encodeURIComponent(id);
+
+method="PUT";
+
+}else{
+
+url =
+API_BASE +
+"/api/tournaments";
+
+method="POST";
+
+}
+
+
 const response =
 await fetch(
-API_BASE +
-"/api/tournaments",
+url,
 {
-method:"POST",
-
+method:method,
 headers:{
-"Content-Type":
-"application/json"
+"Content-Type":"application/json"
 },
-
 body:JSON.stringify({
 
 name:name,
@@ -1585,6 +1586,7 @@ start:start
 }
 );
 
+
 let data={};
 
 try{
@@ -1593,86 +1595,72 @@ data=await response.json();
 data={};
 }
 
+
 if(!response.ok){
 
 throw new Error(
 data.error ||
-"Tournament creation failed."
+(
+id
+? "Tournament update failed."
+: "Tournament creation failed."
+)
 );
 
 }
 
-status.textContent=
-"Tournament published successfully.";
 
-status.className=
-"publish-status green";
+status.textContent =
+id
+? "Tournament updated successfully."
+: "Tournament published successfully.";
+
+status.className="status green";
+
 
 alert(
-"Tournament published successfully!"
+id
+? "Tournament updated successfully!"
+: "Tournament published successfully!"
 );
 
 
-/* Clear */
-
-document
-.getElementById("tournamentName")
-.value="";
-
-document
-.getElementById("tournamentEntry")
-.value="";
-
-document
-.getElementById("tournamentSlots")
-.value="";
-
-document
-.getElementById("tournamentDate")
-.value="";
-
-document
-.getElementById("tournamentTime")
-.value="";
-
-
-document
-.getElementById("tournamentAmPm")
-.value="AM";
-
-
-document
-.getElementById("startPreview")
-.textContent=
-"Not selected";
-
+resetTournamentForm();
 
 loadPublishedTournaments();
 
 
 }catch(error){
 
-console.error(
-"Tournament publish error:",
-error
-);
+console.error(error);
 
-status.textContent=
-"Publish failed: " +
+status.textContent =
+"Operation failed: " +
 error.message;
 
-status.className=
-"publish-status red";
+status.className="status red";
 
 alert(
-"Publish failed: " +
+"Operation failed: " +
 error.message
 );
+
 
 }finally{
 
 button.disabled=false;
+
+if(
+document.getElementById("editingTournamentId").value
+){
+
+button.textContent="Save Changes";
+
+}else{
+
 button.textContent="Create & Publish";
+
+}
 
 }
 
@@ -1686,38 +1674,42 @@ button.textContent="Create & Publish";
 async function loadPublishedTournaments(){
 
 const container =
-document
-.getElementById(
+document.getElementById(
 "publishedTournaments"
 );
 
-if(!container){
-return;
-}
+if(!container)return;
+
 
 try{
 
 const response =
 await fetch(
-API_BASE +
-"/api/tournaments"
+API_BASE + "/api/tournaments"
 );
 
 if(!response.ok){
 
 throw new Error(
-"Unable to load tournaments"
+"Unable to load tournaments."
 );
 
 }
 
-const tournaments =
+
+const data =
 await response.json();
 
-if(
-!Array.isArray(tournaments) ||
-tournaments.length===0
-){
+
+const tournaments =
+Array.isArray(data)
+? data
+: Array.isArray(data.tournaments)
+? data.tournaments
+: [];
+
+
+if(tournaments.length===0){
 
 container.innerHTML=
 `
@@ -1730,37 +1722,41 @@ return;
 
 }
 
+
 container.innerHTML =
 tournaments
 .map(
 function(t){
+
+const id =
+t.id ??
+t._id ??
+t.tournamentId ??
+"";
 
 return `
 <div class="tournament-card">
 
 <h3>
 ${escapeHtml(
-t.name ||
-"Tournament"
+t.name || "Tournament"
 )}
 </h3>
 
-<p>
+<div class="tournament-info">
 
 <b>Mode:</b>
-${escapeHtml(
-modeName(t.mode)
-)}
+${escapeHtml(modeName(t.mode))}
 
 <br>
 
 <b>Entry:</b>
-₹${Number(t.entry||0)}
+₹${Number(t.entry ?? t.entryFee ?? 0)}
 
 <br>
 
 <b>Slots:</b>
-${Number(t.joined||0)}/${Number(t.slots||0)}
+${Number(t.joined ?? 0)}/${Number(t.slots ?? 0)}
 
 <br>
 
@@ -1770,12 +1766,30 @@ ${formatSavedDate(t.start)}
 <br>
 
 <b>Status:</b>
-${escapeHtml(
-t.status ||
-"UPCOMING"
-)}
+<span class="yellow">
+${escapeHtml(t.status || "UPCOMING")}
+</span>
 
-</p>
+</div>
+
+
+<div class="tournament-actions">
+
+<button
+class="btn-green"
+onclick='editTournament(${safeJson(t)})'
+>
+EDIT
+</button>
+
+<button
+class="btn-red"
+onclick='openDeleteModal(${JSON.stringify(String(id))},${JSON.stringify(String(t.name || "Tournament"))})'
+>
+DELETE
+</button>
+
+</div>
 
 </div>
 `;
@@ -1784,7 +1798,10 @@ t.status ||
 )
 .join("");
 
+
 }catch(error){
+
+console.error(error);
 
 container.innerHTML=
 `
@@ -1799,7 +1816,299 @@ Unable to load tournaments.
 
 
 /* =================================================
-   MODE NAME
+   EDIT
+================================================= */
+
+function editTournament(t){
+
+const id =
+t.id ??
+t._id ??
+t.tournamentId ??
+"";
+
+
+if(!id){
+
+alert(
+"This tournament has no ID, so it cannot be edited."
+);
+
+return;
+
+}
+
+
+document.getElementById(
+"editingTournamentId"
+).value=String(id);
+
+
+document.getElementById(
+"tournamentName"
+).value =
+t.name || "";
+
+
+document.getElementById(
+"tournamentMode"
+).value =
+t.mode || "FULL_MAP";
+
+
+document.getElementById(
+"tournamentEntry"
+).value =
+t.entry ??
+t.entryFee ??
+0;
+
+
+document.getElementById(
+"tournamentSlots"
+).value =
+t.slots ??
+0;
+
+
+setDateTimeFields(
+t.start
+);
+
+
+document.getElementById(
+"formTitle"
+).textContent =
+"Edit Tournament";
+
+
+document.getElementById(
+"publishTournamentBtn"
+).textContent =
+"Save Changes";
+
+
+document.getElementById(
+"cancelEditBtn"
+).style.display =
+"block";
+
+
+document.getElementById(
+"publishStatus"
+).textContent =
+"";
+
+
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+}
+
+
+/* =================================================
+   SET DATE + TIME + AMPM
+================================================= */
+
+function setDateTimeFields(value){
+
+if(!value)return;
+
+const d=new Date(value);
+
+if(Number.isNaN(d.getTime()))return;
+
+
+const year=d.getFullYear();
+
+const month=
+String(d.getMonth()+1).padStart(2,"0");
+
+const day=
+String(d.getDate()).padStart(2,"0");
+
+let hour=d.getHours();
+
+const minute=
+String(d.getMinutes()).padStart(2,"0");
+
+
+const ampm =
+hour>=12 ? "PM" : "AM";
+
+
+let displayHour =
+hour%12;
+
+if(displayHour===0){
+displayHour=12;
+}
+
+
+document.getElementById(
+"tournamentDate"
+).value =
+year + "-" + month + "-" + day;
+
+
+document.getElementById(
+"tournamentTime"
+).value =
+String(displayHour).padStart(2,"0") +
+":" +
+minute;
+
+
+document.getElementById(
+"tournamentAmPm"
+).value =
+ampm;
+
+
+updateStartPreview();
+
+}
+
+
+/* =================================================
+   CANCEL EDIT
+================================================= */
+
+function cancelEdit(){
+
+resetTournamentForm();
+
+}
+
+
+/* =================================================
+   DELETE MODAL
+================================================= */
+
+function openDeleteModal(id,name){
+
+if(!id){
+
+alert(
+"This tournament has no ID, so it cannot be deleted."
+);
+
+return;
+
+}
+
+
+deleteTournamentId=id;
+
+
+document.getElementById(
+"deleteMessage"
+).textContent =
+'Delete "' +
+name +
+'"? This action cannot be undone.';
+
+
+document.getElementById(
+"deleteModal"
+).classList.add("active");
+
+}
+
+
+/* =================================================
+   CLOSE MODAL
+================================================= */
+
+function closeDeleteModal(){
+
+deleteTournamentId=null;
+
+document.getElementById(
+"deleteModal"
+).classList.remove("active");
+
+}
+
+
+/* =================================================
+   CONFIRM DELETE
+================================================= */
+
+async function confirmDelete(){
+
+if(!deleteTournamentId){
+
+closeDeleteModal();
+
+return;
+
+}
+
+
+const id=deleteTournamentId;
+
+closeDeleteModal();
+
+
+try{
+
+const response =
+await fetch(
+API_BASE +
+"/api/tournaments/" +
+encodeURIComponent(id),
+{
+method:"DELETE"
+}
+);
+
+
+let data={};
+
+try{
+data=await response.json();
+}catch(_){
+data={};
+}
+
+
+if(!response.ok){
+
+throw new Error(
+data.error ||
+"Delete failed."
+);
+
+}
+
+
+alert(
+"Tournament deleted successfully."
+);
+
+
+loadPublishedTournaments();
+
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Delete failed: " +
+error.message
+);
+
+}
+
+}
+
+
+/* =================================================
+   MODE
 ================================================= */
 
 function modeName(mode){
@@ -1813,9 +2122,7 @@ FOUR_VS_FOUR:"4 vs 4"
 
 };
 
-return names[mode] ||
-mode ||
-"-";
+return names[mode] || mode || "-";
 
 }
 
@@ -1826,22 +2133,14 @@ mode ||
 
 function formatSavedDate(value){
 
-if(!value){
-return "-";
-}
+if(!value)return "-";
 
-const date =
-new Date(value);
+const date=new Date(value);
 
-if(
-Number.isNaN(
-date.getTime()
-)
-){
-
+if(Number.isNaN(date.getTime())){
 return value;
-
 }
+
 
 return date.toLocaleString(
 undefined,
@@ -1858,12 +2157,24 @@ minute:"2-digit"
 
 
 /* =================================================
-   ESCAPE HTML
+   SAFE JSON FOR EDIT
+================================================= */
+
+function safeJson(obj){
+
+return JSON.stringify(obj)
+.replace(/'/g,"&#39;");
+
+}
+
+
+/* =================================================
+   ESCAPE
 ================================================= */
 
 function escapeHtml(value){
 
-return String(value??"")
+return String(value ?? "")
 .replace(/&/g,"&amp;")
 .replace(/</g,"&lt;")
 .replace(/>/g,"&gt;")
