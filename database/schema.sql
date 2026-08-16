@@ -1,0 +1,77 @@
+CREATE TABLE IF NOT EXISTS users (
+ id BIGSERIAL PRIMARY KEY,
+ email TEXT UNIQUE NOT NULL,
+ mobile TEXT UNIQUE,
+ free_fire_ign TEXT NOT NULL,
+ created_at TIMESTAMPTZ DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS wallets (
+ user_id BIGINT PRIMARY KEY REFERENCES users(id),
+ deposit_balance NUMERIC(12,2) NOT NULL DEFAULT 0,
+ winning_balance NUMERIC(12,2) NOT NULL DEFAULT 0,
+ updated_at TIMESTAMPTZ DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS tournaments (
+ id BIGSERIAL PRIMARY KEY,
+ name TEXT NOT NULL,
+ mode TEXT NOT NULL,
+ entry_fee NUMERIC(12,2) NOT NULL DEFAULT 0,
+ slots INT NOT NULL,
+ joined INT NOT NULL DEFAULT 0,
+ start_at TIMESTAMPTZ,
+ status TEXT NOT NULL DEFAULT 'UPCOMING'
+);
+CREATE TABLE IF NOT EXISTS tournament_players (
+ tournament_id BIGINT REFERENCES tournaments(id),
+ user_id BIGINT REFERENCES users(id),
+ free_fire_ign TEXT NOT NULL,
+ joined_at TIMESTAMPTZ DEFAULT now(),
+ PRIMARY KEY(tournament_id,user_id)
+);
+CREATE TABLE IF NOT EXISTS wallet_transactions (
+ id BIGSERIAL PRIMARY KEY,
+ user_id BIGINT REFERENCES users(id),
+ type TEXT NOT NULL,
+ source TEXT NOT NULL,
+ amount NUMERIC(12,2) NOT NULL,
+ fee NUMERIC(12,2) NOT NULL DEFAULT 0,
+ status TEXT NOT NULL,
+ reference TEXT,
+ created_at TIMESTAMPTZ DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS withdrawals (
+ id BIGSERIAL PRIMARY KEY,
+ user_id BIGINT REFERENCES users(id),
+ source TEXT NOT NULL CHECK(source IN ('WINNING','DEPOSIT')),
+ requested_amount NUMERIC(12,2) NOT NULL,
+ fee NUMERIC(12,2) NOT NULL DEFAULT 0,
+ net_amount NUMERIC(12,2) NOT NULL,
+ status TEXT NOT NULL DEFAULT 'PENDING',
+ created_at TIMESTAMPTZ DEFAULT now()
+);
+CREATE TABLE IF NOT EXISTS prizes (
+ id BIGSERIAL PRIMARY KEY,
+ tournament_id BIGINT REFERENCES tournaments(id),
+ user_id BIGINT REFERENCES users(id),
+ free_fire_ign TEXT NOT NULL,
+ amount NUMERIC(12,2) NOT NULL,
+ status TEXT NOT NULL DEFAULT 'PENDING'
+);
+CREATE TABLE IF NOT EXISTS banners (
+ id BIGSERIAL PRIMARY KEY,
+ title TEXT NOT NULL,
+ image_url TEXT,
+ position TEXT NOT NULL DEFAULT 'TOP',
+ rotation_seconds INT NOT NULL DEFAULT 3,
+ active BOOLEAN NOT NULL DEFAULT true,
+ start_at TIMESTAMPTZ,
+ end_at TIMESTAMPTZ
+);
+CREATE TABLE IF NOT EXISTS complaints (
+ id BIGSERIAL PRIMARY KEY,
+ user_id BIGINT REFERENCES users(id),
+ issue TEXT NOT NULL,
+ status TEXT NOT NULL DEFAULT 'OPEN',
+ admin_reply TEXT,
+ created_at TIMESTAMPTZ DEFAULT now()
+);

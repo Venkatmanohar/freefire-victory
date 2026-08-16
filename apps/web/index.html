@@ -1,0 +1,97 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FREEFIRE VICTORY</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#07080b;color:#fff;font-family:Arial}nav{position:sticky;top:0;z-index:10;background:#0b0c10ed;border-bottom:1px solid #272a31}.nav{max-width:1180px;margin:auto;padding:15px 22px;display:flex;justify-content:space-between;align-items:center}.logo{font-weight:900}.logo span{color:#ffb300}nav a{color:#aaa;text-decoration:none;margin:0 10px;font-size:12px}.btn{background:#ffb300;color:#111;border:0;border-radius:9px;padding:11px 16px;font-weight:900;cursor:pointer}.hero{max-width:1180px;margin:auto;padding:75px 22px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:30px}.hero h1{font-size:55px;line-height:1;margin:12px 0}.hero h1 span{color:#ffb300}.hero p{color:#92959c;line-height:1.7}.showcase{height:540px;display:flex;align-items:center;justify-content:center;perspective:1300px}.card3d{width:320px;height:500px;position:relative;transform-style:preserve-3d;animation:flip 8s infinite}.face{position:absolute;inset:0;backface-visibility:hidden;border:7px solid #292c33;border-radius:30px;background:#0d0f14;overflow:hidden;box-shadow:0 30px 70px #000}.back{transform:rotateY(180deg)}@keyframes flip{0%,35%{transform:rotateY(0)}45%,85%{transform:rotateY(180deg)}100%{transform:rotateY(360deg)}}.ph{height:55px;background:#17191f;padding:18px;font-size:11px;font-weight:900}.ph span{color:#ffb300}.pb{padding:14px}.promo{height:115px;border-radius:14px;background:linear-gradient(135deg,#422900,#17191f);display:flex;align-items:end;padding:13px;color:#ffb300;font-weight:900}.dots{text-align:center;color:#ffb300;margin:5px}.mini{background:#17191f;border:1px solid #292c33;border-radius:10px;padding:10px;margin:7px 0;font-size:9px;color:#aaa}.mini b{color:#fff}.section{max-width:1180px;margin:auto;padding:65px 22px}.section h2{font-size:32px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.box{background:#12141a;border:1px solid #292c33;border-radius:14px;padding:18px}.modes{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.mode{text-align:center;cursor:pointer}.mode span{display:block;font-size:25px;margin-bottom:7px}.promoSlider{height:200px;position:relative;border-radius:18px;overflow:hidden;border:1px solid #4a3912;background:#261902}.slide{position:absolute;inset:0;display:flex;align-items:end;padding:25px;opacity:0;transition:.6s}.slide.on{opacity:1}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{text-align:center}.stat b{display:block;color:#ffb300;font-size:28px}.download{text-align:center;background:linear-gradient(135deg,#2b1c02,#111319);border:1px solid #493811;border-radius:20px;padding:50px}.footer{border-top:1px solid #292c33;padding:25px;color:#777;font-size:11px;text-align:center}@media(max-width:800px){.hero{grid-template-columns:1fr}.grid,.stats{grid-template-columns:1fr 1fr}.modes{grid-template-columns:1fr 1fr}}\n</style></head><body>
+<nav><div class="nav"><div class="logo">FREEFIRE <span>VICTORY</span></div><div><a href="#experience">Experience</a><a href="#features">Features</a><a href="#modes">Modes</a><a href="#tournaments">Tournaments</a><a href="#policies">Policies</a><button class="btn" onclick="download()">Download App</button></div></div></nav>
+<section class="hero"><div><div style="color:#ffb300;font-size:11px;font-weight:900;letter-spacing:3px">PLAY • COMPETE • WIN</div><h1>YOUR GAME.<br><span>YOUR VICTORY.</span></h1><p>Premium public website with an automatically rotating app interface showcase. Every major app page is represented in the rotating interface.</p><button class="btn" onclick="download()">DOWNLOAD APP</button></div>
+<div class="showcase">
+<div class="card3d" id="appShowcase">
+<div class="face">
+<div class="ph">FREEFIRE <span>VICTORY</span></div>
+<div class="pb">
+<div class="promo">HOME PAGE</div><div class="dots">● ○ ○ ○ ○ ○</div>
+<div class="mini"><b>Game Modes</b><br>🗺️ Full Map · 👤 1v1 · 👥 2v2 · 👥 4v4</div>
+<div class="mini"><b>Live Tournament</b><br>Night Warriors · LIVE</div>
+<div class="mini"><b>Promotions</b><br>Admin-controlled banner</div>
+</div></div>
+<div class="face back">
+<div class="ph">APP PAGES <span>AUTO</span></div>
+<div class="pb">
+<div class="mini"><b id="showTitle">UPDATE PAGE</b><br><span id="showText">Latest app updates and announcements</span></div>
+<div class="mini"><b>FREE FIRE TOURNAMENT</b><br>Live / Upcoming tournaments and player list</div>
+<div class="mini"><b>UPI PAGE</b><br>QR payment · 5-minute payment window</div>
+<div class="mini"><b>PROFILE PAGE</b><br>Free Fire IGN · History · Support</div>
+<div class="mini"><b>GENERAL / SETTINGS</b><br>Terms · Policies · Account settings</div>
+</div></div>
+</div></div></section>
+<section class="section"><div class="promoSlider"><div class="slide on"><h2>🎉 Festival Special</h2></div><div class="slide"><h2>🔥 Weekend Prize Pool</h2></div><div class="slide"><h2>🎁 Welcome Bonus</h2></div></div><div class="dots" id="pd">● ○ ○</div></section>
+
+<section class="section" id="platform-stats">
+<div class="stats">
+<div class="box stat"><b>50,000+</b>TOURNAMENTS</div>
+<div class="box stat"><b>100K+</b>GAMERS</div>
+<div class="box stat"><b>1.2L+</b>WINNINGS DISTRIBUTED</div>
+<div class="box stat"><b>60K+</b>REWARDS CLAIMED</div>
+</div>
+</section>
+
+<section class="section" id="experience">
+<h2 style="text-align:center">EXPERIENCE THE THRILL</h2>
+<p style="text-align:center;color:#12dfff;font-size:18px">Trusted By Real Players, Built For Fair Play.</p>
+<div class="grid">
+<div class="box"><div style="font-size:32px;color:#12dfff">⚖️</div><h3>FAIR PLAY</h3><p>All matches are conducted fairly, and every player is rewarded based on their in-game performance.</p></div>
+<div class="box"><div style="font-size:32px;color:#12dfff">⚡</div><h3>FAST PERFORMANCE</h3><p>FREEFIRE VICTORY is built with modern technology and optimized performance, ensuring a smooth and confident gaming experience.</p></div>
+<div class="box"><div style="font-size:32px;color:#12dfff">🏆</div><h3>FREE MATCHES</h3><p>Join available contests and discover tournaments without showing entry fees on the public website.</p></div>
+<div class="box"><div style="font-size:32px;color:#12dfff">🎧</div><h3>24/7 CUSTOMER SUPPORT</h3><p>Reliable customer support for payment, tournament and account-related issues.</p></div>
+</div>
+</section>
+
+<section class="section" id="why-us">
+<div class="grid">
+<div class="box"><div style="font-size:30px">🎮</div><h3>SKILL-BASED TOURNAMENT APP</h3><p>Join the action, compete in your chosen mode and track tournament results through the app.</p></div>
+<div class="box"><div style="font-size:30px">👥</div><h3>CREATE ACCOUNT</h3><p>Create your account with a secure, privacy-first setup and verified mobile/email flow.</p></div>
+<div class="box"><div style="font-size:30px">💳</div><h3>WINNING WITHDRAWALS</h3><p>Transfer eligible winning balance through the supported withdrawal flow. Public website does not promise instant payout.</p></div>
+</div>
+</section>
+
+<section class="section" id="features"><h2>Everything In One Platform</h2><div class="grid"><div class="box">🎮 Tournaments</div><div class="box">💰 Wallet</div><div class="box">🏆 Results & Winnings</div><div class="box">🆘 Complaints / Support</div></div></section>
+<section class="section" id="modes"><h2>Game Modes</h2><div class="modes"><div class="box mode" onclick="info('Full Map')"><span>🗺️</span>Full Map</div><div class="box mode" onclick="info('1 vs 1')"><span>👤</span>1 vs 1</div><div class="box mode" onclick="info('2 vs 2')"><span>👥</span>2 vs 2</div><div class="box mode" onclick="info('4 vs 4')"><span>👥</span>4 vs 4</div></div></section>
+<section class="section" id="tournaments"><h2>Live & Upcoming Tournaments</h2>
+<p style="color:#888;line-height:1.6">See the tournament name and live status here. Joining is completed inside the app.</p>
+<div class="grid">
+<div class="box"><span style="color:#5fff99">● LIVE</span><h3>Night Warriors #01</h3><p>Full Map · Live Tournament</p><button class="btn" onclick="joinToDownload()">JOIN</button></div>
+<div class="box"><span style="color:#5fff99">● LIVE</span><h3>Victory Clash #02</h3><p>Clash Squad · Live Tournament</p><button class="btn" onclick="joinToDownload()">JOIN</button></div>
+<div class="box"><span style="color:#ffc44d">● UPCOMING</span><h3>Royal Battle #03</h3><p>4v4 · Upcoming Tournament</p><button class="btn" onclick="joinToDownload()">JOIN</button></div>
+
+</div></section>
+<section class="section"></section>
+<section class="section" id="download"><div class="download"><h2>Download the App to Join</h2><p>Website shows tournament information. To actually join, download and open the FREEFIRE VICTORY app.</p><button class="btn" onclick="download()">DOWNLOAD APP</button></div></section>
+<section class="section" id="policies"><h2>Terms & Policies</h2><div class="grid"><div class="box">Terms & Conditions</div><div class="box">Privacy Policy</div><div class="box">Payment Policy</div><div class="box">Fair Play Policy</div></div></section>
+<footer class="footer">© 2026 FREEFIRE VICTORY · Terms · Privacy · Payment Policy · Support</footer>
+<script>
+const appPages=[
+ ["UPDATE PAGE","Latest app updates and announcements"],
+ ["FREE FIRE TOURNAMENT","Live / upcoming tournament details"],
+ ["UPI PAGE","Add money through UPI QR"],
+ ["PROFILE PAGE","Free Fire IGN, history and support"],
+ ["GENERAL / SETTINGS","Terms, policies and account settings"]
+];
+let pageIndex=0;
+setInterval(()=>{
+ pageIndex=(pageIndex+1)%appPages.length;
+ document.getElementById('showTitle').textContent=appPages[pageIndex][0];
+ document.getElementById('showText').textContent=appPages[pageIndex][1];
+},2200);
+
+let j=0,ss=document.querySelectorAll('.slide');
+setInterval(()=>{
+ j=(j+1)%ss.length;
+ ss.forEach((x,n)=>x.classList.toggle('on',n===j));
+ document.getElementById('pd').textContent=[0,1,2].map(n=>n===j?'●':'○').join(' ');
+},3000);
+
+function joinToDownload(){
+ document.getElementById('download').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function download(){alert('Download App — connect this button to the final APK / Play Store URL.')}
+function info(m){alert(m+' information — joining happens inside the app.')}
+</script></body></html>

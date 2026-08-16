@@ -1,0 +1,1 @@
+PostgreSQL schema is provided in schema.sql. The demo backend uses in-memory state so the UI/API can run without a database. For production, wire the API routes to PostgreSQL transactions and payment-provider webhooks before accepting real money.
